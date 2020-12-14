@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ConsoleApp1
-{//建造者模式
+{//抽象工厂模式
     class Tank
     {
         public virtual void TankShoot()

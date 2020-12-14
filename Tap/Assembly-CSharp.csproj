@@ -58,7 +58,6 @@
     <Compile Include="Assets\_Script\_Bullet\BulletBirth.cs" />
     <Compile Include="Assets\_Script\_Bullet\BullMove.cs" />
     <Compile Include="Assets\_Script\_UI\ButtonPause.cs" />
-    <Compile Include="Assets\_Script\_UI\Denglu.cs" />
     <Compile Include="Assets\_Script\_UI\Menu.cs" />
     <Compile Include="Assets\_Script\_UI\Result.cs" />
     <Compile Include="Assets\_Script\_UI\UIChange.cs" />
@@ -78,6 +77,7 @@
     <Compile Include="Assets\_Script\New_Script\EnemyBuilder.cs" />
     <Compile Include="Assets\_Script\New_Script\EnemyCharacter.cs" />
     <Compile Include="Assets\_Script\New_Script\fox.cs" />
+    <Compile Include="Assets\_Script\New_Script\GameStart.cs" />
     <Compile Include="Assets\_Script\New_Script\qingwa.cs" />
     <Compile Include="Assets\_Script\New_Script\Save.cs" />
     <Compile Include="Assets\_Script\New_Script\State.cs" />
@@ -87,6 +87,7 @@
     <Compile Include="Assets\_Script\Waypoints.cs" />
     <None Include="Assets\Hovl Studio\Procedural fire\Shaders\FireSphere.shader" />
     <None Include="Assets\Hovl Studio\Procedural fire\Demo scene\Readme.txt" />
+    <None Include="Assets\StreamingFile\ byBin.txt" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>E:/GitResp/Tap/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

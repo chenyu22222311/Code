@@ -9,6 +9,9 @@ public class Write : MonoBehaviour
 {
     public Text Result;
     public Mymoney other;
+    public Text text;
+    public GameObject canvas;
+    public bool isbool=true;
     public Save SaveInformation()
     {
         Save save = new Save();
@@ -35,9 +38,9 @@ public class Write : MonoBehaviour
 
     public void SetGame(Save save)
     {
-        for (int i = 0; i < save.list.Count; i++)
+        for (int i =0; i < save.list.Count; i++)
         {
-            
+            text.text = "金币数量："+save.list[i].number+"比赛结果："+ save.list[i].result+" ";
         }
     }
 
@@ -57,6 +60,16 @@ public class Write : MonoBehaviour
     {
         if (File.Exists(Application.dataPath + "/StreamingFile" + "/ byBin.txt"))
         {
+            
+            if (isbool)
+            {
+                canvas.SetActive(true);
+            }
+            else
+            {
+                canvas.SetActive(false);
+            }
+            isbool = !isbool;
             LoadByBin();
         }
     }

@@ -17,8 +17,6 @@ public class UIChange : MonoBehaviour
     {
         game.tag = name;
         MainController.modelname = name;
-       // MainController.isbool = true;
-
     }
 
 

@@ -32,9 +32,13 @@ public class EnemyBuilder : MonoBehaviour
         {
             enemy.nowHp -= other.transform.gameObject.GetComponent<BullMove>().damage;
         }
+        if (other.tag == "End")
+        {
+            Destroy(gameObject);
+        }
     }
-
    
+
     void Update()
     {
         BloodManager.Instance.SetBlood(enemy);

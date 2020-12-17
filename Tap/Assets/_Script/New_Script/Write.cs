@@ -4,6 +4,14 @@ using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
+public struct GameRecord
+{
+    public int number;
+    public string result;
+    public int index;
+}
 
 public class Write : MonoBehaviour
 {
@@ -11,66 +19,48 @@ public class Write : MonoBehaviour
     public Mymoney other;
     public Text text;
     public GameObject canvas;
-    public bool isbool=true;
-    public Save SaveInformation()
-    {
-        Save save = new Save();
-        GameRecord gameRecord;
-        gameRecord.number =other.money;
-        gameRecord.result = Result.text;
-        save.list.Add(gameRecord);
-        return save; 
-    }
+    public bool isbool = true;
+  
 
-    private void SaveByBin()
+    public void zhixing()
     {
-        Save save = SaveInformation();
-        BinaryFormatter bf = new BinaryFormatter();
-        FileStream fileStream = File.Create(Application.dataPath + "/StreamingFile" + "/ byBin.txt");
-        bf.Serialize(fileStream, save);
-        fileStream.Close();
+        CunDang();
+        Chakan();
     }
     public void CunDang()
     {
-        SaveByBin();
-    }
-
-
-    public void SetGame(Save save)
-    {
-        for (int i =0; i < save.list.Count; i++)
-        {
-            text.text = "金币数量："+save.list[i].number+"比赛结果："+ save.list[i].result+" ";
-        }
-    }
-
-    private void LoadByBin()
-    {
-        if (File.Exists(Application.dataPath + "/StreamingFile" + "/ byBin.txt"))
-        {
-            BinaryFormatter bf = new BinaryFormatter();
-            FileStream fileStream = File.Open(Application.dataPath + "/StreamingFile" + "/ byBin.txt", FileMode.Open);
-            Save save = (Save)bf.Deserialize(fileStream);
-            SetGame(save);
-            fileStream.Close();
-        }
+        GameRecord gameRecord;
+        gameRecord.number = other.money;
+        gameRecord.result = Result.text;
+        gameRecord.index = SceneManager.GetActiveScene().buildIndex;
+        ExampleClass.list.Add(gameRecord);
     }
 
     public void Chakan()
     {
-        if (File.Exists(Application.dataPath + "/StreamingFile" + "/ byBin.txt"))
+       
+        for (int i = 0; i < ExampleClass.list.Count; i++)
         {
-            
-            if (isbool)
+            if (ExampleClass.list[i].index== SceneManager.GetActiveScene().buildIndex)
             {
-                canvas.SetActive(true);
+                text.text = text.text + "金币数量：" + ExampleClass.list[i].number + ";" + "比赛结果：" + ExampleClass.list[i].result + " ";
             }
-            else
-            {
-                canvas.SetActive(false);
-            }
-            isbool = !isbool;
-            LoadByBin();
+                
+        } 
+       
+    }
+
+
+    public void xianshi()
+    {
+        if (isbool)
+        {
+            canvas.SetActive(true);
         }
+        else
+        {
+            canvas.SetActive(false);
+        }
+        isbool = !isbool;
     }
 }

@@ -6,7 +6,6 @@ using UnityEngine;
 
 
 public class EnemyMove : MonoBehaviour
-
 {
     private Transform[] positions;
     private int index = 0;

@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Mymoney : MonoBehaviour
 {
-    public static Mymoney instance;
-    public  int money;
+    public  int  money;
     public static bool isBuildmodel = true;
     // Start is called before the first frame update
     public void Money(int i)

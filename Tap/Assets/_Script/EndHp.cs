@@ -8,9 +8,10 @@ using UnityEngine.UI;
 
 public class EndHp : MonoBehaviour
 {
-    public Slider HPslider;
     public GameObject ResultCanvas;
     public Text Result;
+
+    public Slider HPslider;
     int HP = 100;
     int total;
     public GameObject others;

@@ -13,7 +13,7 @@ public class EnemyHp : MonoBehaviour
 
     void Start()
     {
-        textObj = GameObject.Find("Text");
+        textObj = GameObject.Find("Jinbi");
         my = textObj.GetComponent<Mymoney>();
         enemyBuilder = transform.GetComponent<EnemyBuilder>();
     }
@@ -23,11 +23,14 @@ public class EnemyHp : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(0);
         if (enemyBuilder.enemy.nowHp<0)
         {
+            Debug.Log(enemyBuilder.enemy.nowHp);
             Destroy(gameObject);
-            my.Money(14);
             number++;
+            my.Money(14);
+            
         }
     }
 

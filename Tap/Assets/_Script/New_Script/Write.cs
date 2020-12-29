@@ -1,8 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.IO;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -44,12 +42,10 @@ public class Write : MonoBehaviour
             if (ExampleClass.list[i].index== SceneManager.GetActiveScene().buildIndex)
             {
                 text.text = text.text + "金币数量：" + ExampleClass.list[i].number + ";" + "比赛结果：" + ExampleClass.list[i].result + " ";
-            }
-                
+            }        
         } 
        
     }
-
 
     public void xianshi()
     {

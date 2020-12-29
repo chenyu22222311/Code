@@ -8,7 +8,7 @@ public class EnemyHp : MonoBehaviour
     Mymoney my;
     EnemyBuilder enemyBuilder;
     public static int number = 0;
- 
+    private bool isbool;
     // Start is called before the first frame update
 
     void Start()
@@ -23,16 +23,21 @@ public class EnemyHp : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(0);
-        if (enemyBuilder.enemy.nowHp<0)
+        Blood();
+    }
+
+   public  void  Blood()
+    {
+        if(isbool)
         {
-            Debug.Log(enemyBuilder.enemy.nowHp);
+            return;
+        }
+        if (enemyBuilder.enemy.nowHp < 0)
+        {
             Destroy(gameObject);
             number++;
             my.Money(14);
-            
+            isbool = true;
         }
     }
-
-   
 }

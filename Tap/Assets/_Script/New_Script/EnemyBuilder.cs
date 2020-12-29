@@ -8,8 +8,7 @@ public class EnemyBuilder : MonoBehaviour
     public Enemy enemy;
     public Slider blood;
 
-
-    void Start()
+    void Awake()
    {
        if(transform.gameObject.name== "Enemy_01(Clone)")
        {
@@ -37,14 +36,10 @@ public class EnemyBuilder : MonoBehaviour
             Destroy(gameObject);
         }
     }
-   
-
+  
     void Update()
     {
         BloodManager.Instance.SetBlood(enemy);
     }
-
-
-   
 }
 

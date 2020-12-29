@@ -19,6 +19,7 @@ public class EndHp : MonoBehaviour
     void Start()
     {
         total = HP;
+        
     }
 
 
